@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/script.js" type="module"></script>
+    <link rel="stylesheet" href="../css/estilo.css" />
+    <script src="https://kit.fontawesome.com/c4d1ad1d7d.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+
+    <title>Cecilia Silva -Segundo Parcial</title>
+</head>
+
+<body>
+    <div id="custom-alert"></div>
+
+    <header>
+        <div class="inner">
+            <!------------------------------------------------------- NAVIGATION MENU ---------------------------------------------------->
+            <nav class="
+						navbar navbar-expand-lg
+						bg-dark
+						navbar-dark
+						py-3
+						fixed-top
+					">
+                <div class="container">
+                    <!----------------------------------------------------- LOGO ------------------------------------------------------>
+                    <img src="./resources/carslogo.png" id="img-logo" alt="Google logo" />
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+                    <div class="collapse navbar-collapse" id="navmenu">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">Inicio</a
+									>
+								</li>
+								<li>
+									<a href="#" class="nav-link">Nosotros</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">Anuncios</a>
+                            </li>
+                            <li><a href="#" class="nav-link">Blog</a></li>
+                            <li>
+                                <a href="#" class="nav-link">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <h1 id="hAdmin">Administracion</h1>
+        <div>
+            <img src="./resources/headercars.png" id="hImage" />
+        </div>
+    </header>
+
+    <!-------------------------------------------------------------- FORM---------------------------------------------------->
+    <main class="crud">
+        <section class="form-container container mt-2">
+            <form id="formulario" action="/" class="form-control form-control-lg col-12">
+                <fieldset>
+                    <h3 id="infoAnuncio" class="text-center">
+                        Informacion del anuncio
+                    </h3>
+                    <label>
+							<div class="form-label-container">
+								<i class="fas fa-signature"></i>
+								<span>Titulo*:</span>
+							</div>
+							<input
+								type="text"
+								name="txtTitulo"
+								placeholder="ingrese un nombre "
+								autocomplete="off"
+								required
+							/>
+						</label>
+                    <label for="F_transaccion">
+							<div class="form-label-container">
+								<i class="fas fa-laptop"></i
+								><span>Transaccion*:</span>
+							</div>
+							<select name="F_transaccion" id="F_transaccion">
+								<option value="venta">Venta</option>
+								<option value="alquiler">Alquiler</option>
+								<option value="permuta">Permuta</option>
+							</select>
+						</label>
+                    <input type="hidden" name="txtId" />
+                    <label for="txtDescripcion">
+							<div class="form-label-container">
+								<i class="fas fa-info"></i
+								><span>Descripcion*:</span>
+							</div>
+							<input
+								type="text"
+								autocomplete="off"
+								name="txtDescripcion"
+								id="iDescripcion"
+								placeholder="ingrese una descripcion"
+								required
+						/></label>
+                    <label for="txtPrecio">
+							<div class="form-label-container">
+								<i class="fas fa-dollar-sign"></i
+								><span>Precio*:</span>
+							</div>
+							<input
+								type="number"
+								name="txtPrecio"
+								id="txtPrecio"
+								placeholder="ingrese el precio"
+								autocomplete="off"
+								required
+						/></label>
+                    <label for="txtPuertas">
+							<div class="form-label-container">
+								<i class="fas fa-door-open"></i
+								><span>Cantidad de Puertas*:</span>
+							</div>
+							<input
+								type="number"
+								name="txtPuertas"
+								id="txtPuertas"
+								placeholder="ingrese puertas"
+								autocomplete="off"
+								required
+						/></label>
+                    <label for="txtKms">
+							<div class="form-label-container">
+								<i class="fas fa-tachometer-alt"></i
+								><span>Kms*:</span>
+							</div>
+							<input
+								type="number"
+								name="txtKms"
+								id="txtKms"
+								placeholder="ingrese kms"
+								autocomplete="off"
+								required
+						/></label>
+                    <label for="txtCantidadPotencia">
+							<div class="form-label-container">
+								<i class="fas fa-car-battery"></i
+								><span>Potencia*:</span>
+							</div>
+							<input
+								type="number"
+								name="txtCantidadPotencia"
+								id="txtCantidadPotencia"
+								placeholder="ingrese potencia"
+								autocomplete="off"
+								required
+						/></label>
+                </fieldset>
+                <!-------------------------------------BOTONES------------------------------------------------------------------>
+                <div class="box">
+                    <div class="buttons d-flex justify-content-between w-100">
+                        <button type="submit" id="btnAgregar" class="btn btn-success">
+								<i class="fas fa-check"></i>Enviar
+							</button>
+                        <button type="submit" id="btnModificar" class="btn btn-primary">
+								<i class="fas fa-edit"></i>Modificar
+							</button>
+                        <button type="submit" id="btnEliminar" class="btn btn-warning">
+								<i class="fas fa-eraser"></i>Eliminar
+							</button>
+                        <button type="button" id="btnCancelar" class="btn btn-danger">
+								<i class="fas fa-window-close"></i>Cancelar
+							</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-------------------------------------FILTRO Y CHECKBOXES---------------------------------------------------------------------->
+        <section class="container border mt-5">
+            <div class="col-md">
+                <p id="TituloFiltro" class="text-center">
+                    <strong>Zona de Filtros</strong>
+                </p>
+                <hr />
+            </div>
+
+            <div class="row py-4">
+                <div class="col-md-6 col-sm-12">
+                    <label for="txtPrecioFilter" class="
+								text-uppercase
+								font-italic
+								d-block
+								input-promedios
+							">
+							elegir transaccion<select
+								id="listTransaccionesFiltrado"
+								class="form-select form-control"
+							>
+								<option value="todos" selected>Todos</option>
+								<option value="venta">Venta</option>
+								<option value="alquiler">Alquiler</option>
+								<option value="permuta">Permuta</option>
+							</select>
+						</label>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label for="txtPrecioFilter" class="
+								text-uppercase
+								font-italic
+								d-block
+								input-promedios
+							">promedio de precios<input
+								type="text"
+								id="txtPrecioFilter"
+								class="inputs w-100 form-control"
+								readonly
+							/>
+						</label>
+                </div>
+            </div>
+        </section>
+
+        <br />
+        <legend>
+            <h3 id="listado" class="text-center">Listado de personas</h3>
+        </legend>
+
+        <div class="container border">
+            <section class="mx-5">
+                <div class="container">
+                    <p id="TituloFiltro" class="text-center">
+                        <strong>Campos mostrados</strong>
+                    </p>
+                    <div id="campos-mostrados-checkboxes" class="
+								form-check form-check-inline
+								mx-5
+								d-flex
+								flex-wrap
+							">
+                        <div class="m-auto my-4">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="chkTitulo" id="lblCheck">Titulo</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkTitulo"
+										value="titulo"
+									/>
+								</div>
+								<div class="form-check form-check-inline">
+									<label
+										class="form-check-label"
+										for="chkTransaccion"
+										id="lblCheck"
+										>Transaccion</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkTransaccion"
+										value="f_transaccion"
+									/>
+								</div>
+								<div class="form-check form-check-inline">
+									<label
+										class="form-check-label"
+										for="chkDescripcion"
+										id="lblCheck"
+										>Descripcion</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkDescripcion"
+										value="descripcion"
+									/>
+								</div>
+								<div class="form-check form-check-inline">
+									<label
+										class="form-check-label"
+										for="chkPrecio"
+										id="lblCheck"
+										>Precio</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkPrecio"
+										value="precio"
+									/>
+								</div>
+								<div class="form-check form-check-inline">
+									<label
+										class="form-check-label"
+										for="chkPuertas"
+										id="lblCheck"
+										>Puertas
+									</label>
+                                <input class="form-check-input" type="checkbox" checked id="chkPuertas" value="puertas" />
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" for="chkKMs" id="lblCheck">KMs</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkKMs"
+										value="kms"
+									/>
+								</div>
+								<div class="form-check form-check-inline">
+									<label
+										class="form-check-label"
+										for="chkPotencia"
+										id="lblCheck"
+										>Potencia</label
+									>
+									<input
+										class="form-check-input"
+										type="checkbox"
+										checked
+										id="chkPotencia"
+										value="potencia"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<br />
+			<!------------------------------------------------------- TABLA --------------------------------------------------------------------->
+			<div class="container">
+				<fieldset id="fieldTabla">
+					<section>
+						<div id="divTabla"></div>
+						<div class="spinner" id="containerSpinner"></div>
+
+						<div id="divAlert"></div>
+					</section>
+				</fieldset>
+			</div>
+		</main>
+
+		<!-------------------------------------------------------FOOTER--------------------------------------------------------------------->
+		<footer>
+			<div class="footer-content">&copy; 2021 - Cecilia Silva</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,177 @@
+/* #region        HEADER       */
+
+.back-image {
+    /* The image used */
+    background-image: url('../resources/headercars.png');
+    width: 100%;
+    height: 300px;
+}
+
+
+/* #endregion */
+
+
+/*#region        TABLE             */
+
+body,
+div,
+input,
+select,
+p {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* #endregion    */
+
+
+/* #endregion    */
+
+
+/*#region    NAVIGATION          BAR  */
+
+.back-image {
+    z-index: 1!important;
+    margin-top: 92px;
+    position: absolute!important;
+}
+
+.listado {
+    margin-top: 400px !important;
+}
+
+
+/* ul {
+    padding: 0px;
+    margin: 0px;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+    height: 10000%;
+}
+
+li {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+} */
+
+
+/*#endregion */
+
+
+/*#region      LOGO               */
+
+#img-logo {
+    width: 130px;
+    height: 100px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+
+/*#endregion */
+
+
+/* #region MEDIA QUERIES      */
+
+@media (max-width: 1000px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        height: 200px;
+    }
+    ul {
+        flex-direction: column;
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .back-image {
+        display: none;
+    }
+}
+
+
+/* #endregion */
+
+footer {
+    bottom: 10px;
+    width: 100%;
+    background-color: #378058;
+    overflow: auto;
+    text-align: center;
+}
+
+.footer-content {
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.titulos {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.listado {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 0 15%;
+}
+
+.header3 {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/* Extras */
+
+.text-purple {
+    color: purple;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.center-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-items>* {
+    margin: auto;
+}
+
+.card {
+    height: 100%;
+}
